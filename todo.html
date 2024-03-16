@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <table align="center">
+            <tr>
+                <td><input type="text" id="list" </td>
+                <td><button type="submit" onclick="saveR()">Add</button></td>
+            </tr>
+        </table>   
+        <table align="center">
+            <thead>
+                <tr>
+                <!-- <td>SrNo</td>
+                <td>List</td>
+                <td>Action</td> -->
+             </tr>
+            </thead>
+            <tbody id="allrecord"></tbody>
+        </table>
+  
+
+    <script type="text/javascript">
+
+        let record = [];
+    
+	  let viewRecord = () => {
+            var tbl = "";
+            record.map((val, i) => {
+                return (
+                    tbl += `
+                        <tr>
+                          <td> ${i + 1}</td>
+                          <td>${val.list}</td>
+                           <td><button onclick = "deleteRcord(${i})" >DELETE</button>
+					</td>
+                     </tr> 
+                    `
+                );
+            });
+            document.getElementById('allrecord').innerHTML = tbl;
+        }
+	 
+        viewRecord();
+
+        let saveR = () => {
+            let userlist = document.getElementById('list').value;
+            let obj = {
+                list : userlist,
+            }
+       record.push(obj);
+          
+            viewRecord();
+            
+            document.getElementById('list').value = "";
+
+        }
+
+        let deleteRcord = (id) => {
+            record.splice(id, 1);
+
+            viewRecord();
+
+        }
+
+    </script>
+</body>
+</html>

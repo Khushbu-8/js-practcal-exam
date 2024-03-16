@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	
+	<body>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" id="name">
+					<span id="nameerr"></span>
+				</td>
+				<tr>
+				
+				<td>Email:</td>
+				<td><input type="text" id="email">
+					<span id="emailerr"></span>	
+				</td>					
+			</tr>
+			
+			<tr>
+				<td>Password:</td>
+				<td><input type="text" id="password">
+					<span id="passerr"></span>
+					</td>
+			</tr>
+			
+			<tr>
+				<td>City:</td>
+				<td><input type="text" id="city">
+					<span id="cityerr"></span>	
+				</td>
+			</tr>
+			<tr>
+				<td><button onclick="save()">save</button></td>
+				
+			</tr>
+		</table>
+		
+		<script>
+			let save = () =>{
+				let name = document.getElementById("name").value;
+			if(!name){
+				let nameerr = document.getElementById("nameerr");
+				nameerr.innerHTML = "Name is required...";
+				nameerr.style.color = "red";
+			
+			}
+			
+			let email = document.getElementById("email").value;
+			if(!email){
+				let emailerr = document.getElementById("emailerr");
+				emailerr.innerHTML = "Email is required...";
+				emailerr.style.color = "red";
+			
+			}
+			let password = document.getElementById("password").value;
+			if(!password){
+				let passerr = document.getElementById("passerr");
+				passerr.innerHTML = "Password is required...";
+				passerr.style.color = "red";
+			
+			}
+			let city = document.getElementById("city").value;
+			if(!city){
+				let cityerr = document.getElementById("cityerr");
+				cityerr.innerHTML = "City is required...";
+				cityerr.style.color = "red";
+			
+			}
+			
+			
+			alert("save");
+			}
+		</script>
+	</body>
+</html>
